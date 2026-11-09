@@ -9,3 +9,4 @@ htmlcov/
 .venv/
 .ipynb_checkpoints/
 *.zip
+reports/junit.xml
