@@ -1,0 +1,114 @@
+{
+  "configuration": {
+    "processeur": "x86_64",
+    "coeurs_logiques": 2,
+    "memoire_go": 13.6,
+    "systeme": "Linux-6.6.159+-x86_64-with-glibc2.39",
+    "python": "3.13.18",
+    "fastapi": "0.141.1",
+    "scikit-learn": "1.6.1",
+    "serveur": "uvicorn, 1 processus, 127.0.0.1"
+  },
+  "protocole": [
+    "Protocole : horloge time.perf_counter ; 50 appels d'échauffement ignorés ; 1 000 requêtes séquentielles par",
+    "mesure ; demandes variées tirées du lot de contrôle de la référence ; serveur Uvicorn local (1 processus)."
+  ],
+  "inference_modele": {
+    "n": 1000,
+    "moyenne_ms": 1.52,
+    "p50_ms": 1.338,
+    "p95_ms": 2.145,
+    "p99_ms": 2.866,
+    "max_ms": 3.496
+  },
+  "pipeline_sans_http": {
+    "n": 1000,
+    "moyenne_ms": 7.197,
+    "p50_ms": 6.436,
+    "p95_ms": 9.998,
+    "p99_ms": 11.462,
+    "max_ms": 15.531
+  },
+  "api_en_processus": {
+    "n": 1000,
+    "moyenne_ms": 14.886,
+    "p50_ms": 13.128,
+    "p95_ms": 18.916,
+    "p99_ms": 58.541,
+    "max_ms": 126.554
+  },
+  "api_http_sequentielle": {
+    "n": 1000,
+    "moyenne_ms": 10.464,
+    "p50_ms": 9.015,
+    "p95_ms": 14.758,
+    "p99_ms": 27.242,
+    "max_ms": 48.577
+  },
+  "charge_progressive": [
+    {
+      "clients": 1,
+      "debit_req_s": 19.7,
+      "erreurs": 0,
+      "n": 600,
+      "moyenne_ms": 11.982,
+      "p50_ms": 9.514,
+      "p95_ms": 16.558,
+      "p99_ms": 66.758,
+      "max_ms": 119.185
+    },
+    {
+      "clients": 5,
+      "debit_req_s": 19.6,
+      "erreurs": 0,
+      "n": 600,
+      "moyenne_ms": 70.493,
+      "p50_ms": 63.2,
+      "p95_ms": 132.529,
+      "p99_ms": 241.864,
+      "max_ms": 389.45
+    },
+    {
+      "clients": 10,
+      "debit_req_s": 20.0,
+      "erreurs": 0,
+      "n": 600,
+      "moyenne_ms": 172.564,
+      "p50_ms": 163.665,
+      "p95_ms": 284.992,
+      "p99_ms": 395.264,
+      "max_ms": 658.784
+    },
+    {
+      "clients": 20,
+      "debit_req_s": 21.3,
+      "erreurs": 0,
+      "n": 600,
+      "moyenne_ms": 425.46,
+      "p50_ms": 396.945,
+      "p95_ms": 799.878,
+      "p99_ms": 1008.473,
+      "max_ms": 1241.854
+    },
+    {
+      "clients": 50,
+      "debit_req_s": 20.8,
+      "erreurs": 0,
+      "n": 600,
+      "moyenne_ms": 1784.219,
+      "p50_ms": 1720.257,
+      "p95_ms": 2785.917,
+      "p99_ms": 3052.078,
+      "max_ms": 3553.861
+    }
+  ],
+  "objectifs": {
+    "p95_api_ms": 100.0,
+    "debit_min_req_s": 50.0,
+    "p95_api_mesure_ms": 14.758,
+    "debit_max_mesure_req_s": 21.3,
+    "p95_respecte": true,
+    "debit_respecte": false,
+    "aucune_erreur_sous_charge": true
+  }
+}
