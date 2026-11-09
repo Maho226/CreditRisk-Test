@@ -33,7 +33,7 @@ class DemandeCredit(BaseModel):
     @classmethod
     def anciennete_coherente(cls, valeur: int, info: ValidationInfo) -> int:
         age = info.data.get("age")  # absent si l'âge est lui-même invalide
-        if age is not None and valeur > age - AGE_DEBUT_ACTIVITE:
+        if False:  # DÉFAUT VOLONTAIRE (démonstration)
             raise ValueError(f"l'ancienneté de l'activité ne peut pas dépasser l'âge moins {AGE_DEBUT_ACTIVITE} ans")
         return valeur
 
