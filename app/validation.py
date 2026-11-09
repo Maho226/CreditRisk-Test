@@ -8,8 +8,8 @@ reprennent jamais les valeurs saisies.
 from pydantic import BaseModel, ConfigDict, Field, ValidationError, ValidationInfo, field_validator
 
 AGE_MIN, AGE_MAX = 18, 75
-REVENU_MAX = 50_000_000
-MONTANT_MAX = 100_000_000
+REVENU_MIN, REVENU_MAX = 10_000, 50_000_000  # minimum réaliste (A3)
+MONTANT_MIN, MONTANT_MAX = 10_000, 100_000_000
 DUREE_MIN, DUREE_MAX = 1, 120
 AGE_DEBUT_ACTIVITE = 15  # ancienneté maximale = âge − 15
 
@@ -20,8 +20,12 @@ class DemandeCredit(BaseModel):
     model_config = ConfigDict(extra="forbid", strict=True)
 
     age: int = Field(ge=AGE_MIN, le=AGE_MAX, description="Âge du demandeur (années)")
-    revenu_mensuel: float = Field(gt=0, le=REVENU_MAX, allow_inf_nan=False, description="Revenu mensuel (FCFA)")
-    montant_credit: float = Field(gt=0, le=MONTANT_MAX, allow_inf_nan=False, description="Montant demandé (FCFA)")
+    revenu_mensuel: float = Field(
+        ge=REVENU_MIN, le=REVENU_MAX, allow_inf_nan=False, description="Revenu mensuel (FCFA)"
+    )
+    montant_credit: float = Field(
+        ge=MONTANT_MIN, le=MONTANT_MAX, allow_inf_nan=False, description="Montant demandé (FCFA)"
+    )
     duree_mois: int = Field(ge=DUREE_MIN, le=DUREE_MAX, description="Durée du crédit (mois)")
     anciennete_activite: int = Field(ge=0, description="Ancienneté de l'activité (années)")
 

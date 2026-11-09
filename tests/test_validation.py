@@ -59,7 +59,7 @@ def test_revenu_non_numerique_rejete(revenu):
     assert "revenu_mensuel" in champs_en_erreur(avec(revenu_mensuel=revenu))
 
 
-@pytest.mark.parametrize("revenu", [0, -1, -250000, 50_000_001])
+@pytest.mark.parametrize("revenu", [0, -1, 9_999, -250000, 50_000_001])
 def test_revenu_hors_limites_rejete(revenu):
     assert "revenu_mensuel" in champs_en_erreur(avec(revenu_mensuel=revenu))
 
@@ -85,7 +85,7 @@ def test_duree_aux_limites_acceptee(duree):
 
 
 # ------------------------------------------------------------------ EX08 montant (CT14)
-@pytest.mark.parametrize("montant", [0, -1000, 100_000_001, 10**12])
+@pytest.mark.parametrize("montant", [0, -1000, 9_999, 100_000_001, 10**12])
 def test_montant_invalide_rejete(montant):
     assert "montant_credit" in champs_en_erreur(avec(montant_credit=montant))
 

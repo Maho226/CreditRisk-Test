@@ -117,6 +117,7 @@ def main(argv=None):
     groupe.add_argument("--creer-reference", action="store_true")
     groupe.add_argument("--comparer", metavar="MODELE")
     parser.add_argument("--force", action="store_true", help="écraser une référence existante")
+    parser.add_argument("--sortie", help="fichier du rapport de comparaison (par défaut : selon les versions)")
     args = parser.parse_args(argv)
 
     if args.creer_reference:
@@ -127,7 +128,7 @@ def main(argv=None):
         print(f"Référence figée : {REFERENCE}")
         return
     resultat = comparer(args.comparer)
-    sortie = Path("reports") / f"non_regression_{resultat['reference']}_{resultat['candidat']}.json"
+    sortie = Path(args.sortie or f"reports/non_regression_{resultat['reference']}_{resultat['candidat']}.json")
     sortie.write_text(json.dumps(resultat, indent=2, ensure_ascii=False))
     print(json.dumps(resultat, indent=2, ensure_ascii=False))
 

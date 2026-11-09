@@ -19,7 +19,8 @@ from app.preprocessing import (
 logger = logging.getLogger("creditrisk")
 
 CHEMIN_MODELE_DEFAUT = Path("models/model_v1.joblib")
-SEUIL_MODERE, SEUIL_ELEVE = 0.20, 0.50  # interprétation de la probabilité (plan de test, § 2.2)
+SEUIL_MODERE = 0.20  # en dessous : risque faible ; le niveau « eleve » commence au seuil de décision du modèle
+ECART_MAX_VARIABLE_DERIVEE = 4.0  # alerte au-delà de 4 écarts-types de la moyenne d'entraînement
 
 
 class ModeleIndisponible(Exception):
@@ -59,10 +60,11 @@ def charger_modele(chemin=CHEMIN_MODELE_DEFAUT) -> dict:
     return paquet
 
 
-def interpreter(probabilite: float) -> str:
-    if probabilite < SEUIL_MODERE:
-        return "faible"
-    return "modere" if probabilite < SEUIL_ELEVE else "eleve"
+def interpreter(probabilite: float, seuil_decision: float) -> str:
+    """faible < 0,20 ≤ modere < seuil de décision ≤ eleve : « eleve » si et seulement si défaut prédit (A1)."""
+    if probabilite >= seuil_decision:
+        return "eleve"
+    return "faible" if probabilite < SEUIL_MODERE else "modere"
 
 
 def alertes_hors_domaine(donnees: dict, domaine: dict) -> list[str]:
@@ -73,6 +75,20 @@ def alertes_hors_domaine(donnees: dict, domaine: dict) -> list[str]:
         if not bas <= donnees[variable] <= haut:
             alertes.append(f"{variable} hors du domaine d'entraînement [{bas:g} ; {haut:g}]")
     return alertes
+
+
+def alertes_variables_derivees(X, pipeline) -> list[str]:
+    """Variable calculée (taux d'endettement) très éloignée des données d'entraînement (A2).
+
+    Les variables saisies peuvent toutes être dans leur domaine alors que leur combinaison ne l'est pas
+    (mensualité de 5 fois le revenu). L'écart est mesuré avec la normalisation ajustée à l'entraînement.
+    """
+    normalisation = pipeline.named_steps["normalisation"]
+    ecarts = (X.iloc[0].to_numpy() - normalisation.mean_) / normalisation.scale_
+    position = list(X.columns).index("taux_endettement")
+    if abs(ecarts[position]) > ECART_MAX_VARIABLE_DERIVEE:
+        return [f"taux_endettement ({X.iloc[0, position]:.2f}) très éloigné des données d'entraînement"]
+    return []
 
 
 class ServicePrediction:
@@ -103,11 +119,12 @@ class ServicePrediction:
         if not math.isfinite(probabilite) or not 0.0 <= probabilite <= 1.0:
             raise PredictionErreur("Probabilité invalide produite par le modèle")
         donnees = demande.model_dump()
+        alertes = alertes_hors_domaine(donnees, self.paquet["metadonnees"]["domaine_entrainement"])
         return {
             "probabilite_defaut": probabilite,
-            "niveau_risque": interpreter(probabilite),
+            "niveau_risque": interpreter(probabilite, self.paquet["seuil"]),
             "defaut_predit": probabilite >= self.paquet["seuil"],
-            "alertes": alertes_hors_domaine(donnees, self.paquet["metadonnees"]["domaine_entrainement"]),
+            "alertes": alertes + alertes_variables_derivees(X, pipeline),
             "version_modele": self.paquet["metadonnees"]["version"],
         }
 

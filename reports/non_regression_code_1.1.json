@@ -1,0 +1,33 @@
+{
+  "reference": "v1",
+  "candidat": "v1",
+  "date": "2026-11-09T10:39:10+00:00",
+  "version_code": "bab18296b82292b29ee18d611d4a32acffff2ac7",
+  "ecart_probabilite_max": 0.0,
+  "ecart_probabilite_moyen": 0.0,
+  "decisions_changees": 0,
+  "decision": "accepter",
+  "details": {
+    "rappel": {
+      "reference": 0.751269035532995,
+      "candidat": 0.751269035532995,
+      "baisse": 0.0,
+      "tolerance": 0.03,
+      "verdict": "accepter"
+    },
+    "f1": {
+      "reference": 0.5165794066317626,
+      "candidat": 0.5165794066317626,
+      "baisse": 0.0,
+      "tolerance": 0.03,
+      "verdict": "accepter"
+    },
+    "roc_auc": {
+      "reference": 0.7844061925141127,
+      "candidat": 0.7844061925141127,
+      "baisse": 0.0,
+      "tolerance": 0.02,
+      "verdict": "accepter"
+    }
+  }
+}

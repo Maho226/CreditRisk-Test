@@ -60,7 +60,7 @@ def test_scenario_principal_de_bout_en_bout(client, monkeypatch):
     assert resultat["probabilite_defaut"] == pytest.approx(attendu, abs=1e-12)
 
     # 5. structure et cohérence de la réponse
-    assert resultat["niveau_risque"] == interpreter(resultat["probabilite_defaut"])
+    assert resultat["niveau_risque"] == interpreter(resultat["probabilite_defaut"], paquet["seuil"])
     assert resultat["defaut_predit"] == (resultat["probabilite_defaut"] >= paquet["seuil"])
     assert resultat["alertes"] == []
 

@@ -100,7 +100,8 @@ def test_metriques_du_modele_actuel_egales_a_la_reference(reference, paquet):
 def test_comparaison_du_modele_de_reference_avec_lui_meme():
     resultat = comparer(MODELE)
     assert resultat["decision"] == "accepter"
-    assert resultat["ecart_probabilite_max"] == 0.0
+    # pas d'égalité stricte : les calculs flottants peuvent différer au 16e chiffre d'une machine à l'autre
+    assert resultat["ecart_probabilite_max"] <= 1e-12
     assert resultat["decisions_changees"] == 0
 
 

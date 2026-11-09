@@ -19,7 +19,7 @@ logger = logging.getLogger("creditrisk")
 
 app = FastAPI(
     title="CreditRisk-Test",
-    version="1.0.0",
+    version="1.1.0",
     description="Estimation du risque de défaut de remboursement d'un demandeur de crédit (prototype de test).",
 )
 

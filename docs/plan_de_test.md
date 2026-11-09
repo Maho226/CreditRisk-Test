@@ -28,8 +28,8 @@ Les cinq champs sont **obligatoires** ; tout autre champ est **refusé**. Les ty
 | Champ | Type | Intervalle autorisé | Domaine des données (alerte au-delà, bornes exactes calculées sur le jeu d'entraînement) |
 |---|---|---|---|
 | `age` | entier | 18 à 75 ans | 18 à 70 |
-| `revenu_mensuel` | nombre fini | > 0 et ≤ 50 000 000 FCFA | 30 000 à 1 589 000 |
-| `montant_credit` | nombre fini | > 0 et ≤ 100 000 000 FCFA | 50 000 à 21 760 000 |
+| `revenu_mensuel` | nombre fini | 10 000 à 50 000 000 FCFA (minimum ajouté en version 1.1, anomalie A3) | 30 000 à 1 589 000 |
+| `montant_credit` | nombre fini | 10 000 à 100 000 000 FCFA (minimum ajouté en version 1.1, anomalie A3) | 50 000 à 21 760 000 |
 | `duree_mois` | entier | 1 à 120 mois | 3 à 60 |
 | `anciennete_activite` | entier | 0 à (âge − 15) ans | 0 à 41 |
 
@@ -46,7 +46,7 @@ Règle de cohérence : l'ancienneté de l'activité ne peut pas dépasser l'âge
 | `GET /health`, modèle chargé / non chargé | 200 / 503 | `statut` (`ok` / `degrade`), `modele_charge` |
 | `GET /model-info` | 200 / 503 | version, algorithme, date d'entraînement, variables, seuil, métriques de validation, empreinte SHA-256 du modèle et des données |
 
-**Interprétation de la probabilité** (couche applicative) : `faible` < 0,20 ≤ `modere` < 0,50 ≤ `eleve`. Le seuil de `defaut_predit` est choisi sur le jeu de validation et enregistré avec le modèle.
+**Interprétation de la probabilité** (couche applicative) : `faible` < 0,20 ≤ `modere` < seuil de décision ≤ `eleve`. Le seuil de décision (`defaut_predit`) est choisi sur le jeu de validation et enregistré avec le modèle. Version 1.0 : `eleve` commençait à 0,50, indépendamment du seuil (anomalie A1, corrigée en 1.1). Les alertes portent aussi sur le taux d'endettement calculé, au-delà de 4 écarts-types de la moyenne d'entraînement (anomalie A2, corrigée en 1.1).
 
 ## 3. Stratégie de test
 

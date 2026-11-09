@@ -2,8 +2,8 @@
 
 Entrée INVALIDE (hors des intervalles autorisés, mauvais type, schéma incorrect) → rejetée (422).
 Entrée VALIDE MAIS INHABITUELLE (hors du domaine d'entraînement) → traitée (200) avec une alerte.
-Les anomalies connues sont marquées `xfail(strict=True)` : elles restent visibles dans chaque exécution,
-et le test échouera dès que l'anomalie sera corrigée, pour rappeler de retirer la marque.
+Les anomalies A1 à A3, d'abord marquées `xfail(strict=True)`, sont corrigées en version 1.1 du code ;
+leurs tests vérifient désormais la correction.
 """
 
 import json
@@ -71,6 +71,10 @@ def test_valeur_non_finie_rejetee(client, champ, valeur):
         ({"duree_mois": 0}, 422),
         ({"duree_mois": 120}, 200),
         ({"duree_mois": 121}, 422),
+        ({"revenu_mensuel": 10_000}, 200),
+        ({"revenu_mensuel": 9_999.99}, 422),
+        ({"montant_credit": 10_000}, 200),
+        ({"montant_credit": 9_999}, 422),
         ({"revenu_mensuel": 50_000_000}, 200),
         ({"revenu_mensuel": 50_000_000.01}, 422),
         ({"montant_credit": 100_000_000}, 200),
@@ -137,8 +141,8 @@ def demandes_valides(draw):
     age = draw(st.integers(18, 75))
     return {
         "age": age,
-        "revenu_mensuel": draw(st.floats(1, 50_000_000, allow_nan=False, allow_infinity=False)),
-        "montant_credit": draw(st.floats(1, 100_000_000, allow_nan=False, allow_infinity=False)),
+        "revenu_mensuel": draw(st.floats(10_000, 50_000_000, allow_nan=False, allow_infinity=False)),
+        "montant_credit": draw(st.floats(10_000, 100_000_000, allow_nan=False, allow_infinity=False)),
         "duree_mois": draw(st.integers(1, 120)),
         "anciennete_activite": draw(st.integers(0, age - 15)),
     }
@@ -150,7 +154,9 @@ def test_propriete_toute_demande_valide_donne_une_probabilite_valide(client, dem
     reponse = client.post("/predict", json=demande)
     assert reponse.status_code == 200
     assert probabilite_valide(reponse)
-    assert reponse.json()["niveau_risque"] == interpreter(reponse.json()["probabilite_defaut"])
+    resultat = reponse.json()
+    assert resultat["niveau_risque"] == interpreter(resultat["probabilite_defaut"], main.service.paquet["seuil"])
+    assert (resultat["niveau_risque"] == "eleve") == resultat["defaut_predit"]
 
 
 @PROFIL
@@ -179,23 +185,25 @@ def test_risque_non_croissant_avec_l_anciennete(client):
     assert all(b <= a + 1e-12 for a, b in zip(p, p[1:], strict=False))
 
 
-# ================================================================== anomalies connues (registre)
-@pytest.mark.xfail(strict=True, reason="A1 : niveau « eleve » dès 0,50 mais défaut prédit seulement à partir de 0,52")
+# ================================================================== anomalies corrigées en version 1.1 du code
 def test_A1_niveau_de_risque_coherent_avec_la_decision():
     seuil = main.service.paquet["seuil"]
     for p in np.round(np.arange(0, 1.0001, 0.005), 3):
-        assert (interpreter(p) == "eleve") == (p >= seuil), f"p = {p}"
+        assert (interpreter(p, seuil) == "eleve") == (p >= seuil), f"p = {p}"
 
 
-@pytest.mark.xfail(strict=True, reason="A2 : aucune alerte quand le taux d'endettement sort du domaine d'entraînement")
+def test_A1_cas_reproduit(client):
+    resultat = client.post("/predict", json=avec(montant_credit=1_126_000)).json()
+    assert resultat["niveau_risque"] != "eleve" and not resultat["defaut_predit"]
+
+
 def test_A2_alerte_si_mensualite_superieure_au_revenu(client):
     # montant, durée et revenu sont chacun dans le domaine, mais la mensualité vaut 5 fois le revenu
     reponse = client.post("/predict", json=avec(montant_credit=15_000_000))
     assert reponse.status_code == 200
-    assert reponse.json()["alertes"] != []
+    assert any("taux_endettement" in a for a in reponse.json()["alertes"])
 
 
-@pytest.mark.xfail(strict=True, reason="A3 : un revenu ou un montant de 1 FCFA est accepté")
 @pytest.mark.parametrize("modif", [{"revenu_mensuel": 1}, {"montant_credit": 1}])
 def test_A3_montants_derisoires_rejetes(client, modif):
     assert client.post("/predict", json=avec(**modif)).status_code == 422
