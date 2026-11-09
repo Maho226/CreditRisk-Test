@@ -1,0 +1,13 @@
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
+markers = ["slow: tests de performance (exclus des Pull Requests)"]
+filterwarnings = ["ignore:Unknown solver options"]
+
+[tool.ruff]
+line-length = 120
+target-version = "py313"
+extend-exclude = ["notebooks"]
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "B"]

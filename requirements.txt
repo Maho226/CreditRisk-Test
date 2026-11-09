@@ -1,0 +1,19 @@
+# Environnement figé (Python 3.13) — versions relevées dans Colab le 09/11/2026
+# Application
+fastapi==0.141.1
+starlette==1.10.0
+pydantic==2.14.2
+pydantic_core==2.50.2
+uvicorn==0.54.0
+scikit-learn==1.6.1
+pandas==2.2.3
+numpy==2.4.6
+joblib==1.6.0
+# Tests et qualité
+httpx==0.28.1
+pytest==8.4.2
+pytest-cov==7.1.0
+hypothesis==6.170.15
+ruff==0.17.4
+# Tests de charge (Partie VI)
+locust==2.47.0
