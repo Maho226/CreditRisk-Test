@@ -1,0 +1,30 @@
+============================= test session starts ==============================
+platform linux -- Python 3.13.18, pytest-8.4.2, pluggy-1.7.0 -- /usr/bin/python3
+cachedir: .pytest_cache
+hypothesis profile 'default'
+rootdir: /content/CreditRisk-Test
+configfile: pyproject.toml
+plugins: locust-2.47.0, hypothesis-6.170.15, cov-7.1.0, langsmith-0.14.17, typeguard-4.6.0, anyio-4.16.0, platformdirs-4.14.3
+collecting ... collected 19 items
+
+tests/test_regression.py::test_reference_figee_et_coherente PASSED       [  5%]
+tests/test_regression.py::test_lot_de_controle_reproductible PASSED      [ 10%]
+tests/test_regression.py::test_probabilites_du_lot_de_controle_inchangees PASSED [ 15%]
+tests/test_regression.py::test_probabilites_via_l_api_inchangees PASSED  [ 21%]
+tests/test_regression.py::test_sorties_conformes_au_contrat_sur_tout_le_lot PASSED [ 26%]
+tests/test_regression.py::test_meme_demande_meme_probabilite PASSED      [ 31%]
+tests/test_regression.py::test_sauvegarde_puis_rechargement PASSED       [ 36%]
+tests/test_regression.py::test_metriques_du_modele_actuel_egales_a_la_reference PASSED [ 42%]
+tests/test_regression.py::test_comparaison_du_modele_de_reference_avec_lui_meme PASSED [ 47%]
+tests/test_regression.py::test_reentrainement_reproductible PASSED       [ 52%]
+tests/test_regression.py::test_detection_d_une_baisse_du_rappel_ou_du_f1[candidat0-accepter] PASSED [ 57%]
+tests/test_regression.py::test_detection_d_une_baisse_du_rappel_ou_du_f1[candidat1-accepter] PASSED [ 63%]
+tests/test_regression.py::test_detection_d_une_baisse_du_rappel_ou_du_f1[candidat2-accepter] PASSED [ 68%]
+tests/test_regression.py::test_detection_d_une_baisse_du_rappel_ou_du_f1[candidat3-investiguer] PASSED [ 73%]
+tests/test_regression.py::test_detection_d_une_baisse_du_rappel_ou_du_f1[candidat4-investiguer] PASSED [ 78%]
+tests/test_regression.py::test_detection_d_une_baisse_du_rappel_ou_du_f1[candidat5-rejeter] PASSED [ 84%]
+tests/test_regression.py::test_detection_d_une_baisse_du_rappel_ou_du_f1[candidat6-rejeter] PASSED [ 89%]
+tests/test_regression.py::test_detection_d_une_baisse_du_rappel_ou_du_f1[candidat7-rejeter] PASSED [ 94%]
+tests/test_regression.py::test_modele_degrade_rejete PASSED              [100%]
+
+============================== 19 passed in 4.45s ==============================

@@ -1,0 +1,1632 @@
+{
+  "version_modele": "v1",
+  "date_creation": "2026-11-09T10:33:20+00:00",
+  "version_code": "0293f9db9f73395e7cbc8d14c537b11ea092c7cc",
+  "sha256_modele": "7f407edd7c10dc8aa10d360cc62054684a3d5125caa7f9194572fdd949893d1b",
+  "sha256_donnees": "e880e9e2d4e2e40fcdba8d43dda57dd705e95d9c48ae4d4327bb2a47eafe8436",
+  "seuil": 0.52,
+  "metriques_validation": {
+    "rappel": 0.751269035532995,
+    "precision": 0.39361702127659576,
+    "f1": 0.5165794066317626,
+    "roc_auc": 0.7844061925141127,
+    "taux_signalement": 0.376,
+    "n": 1000,
+    "n_defauts": 197
+  },
+  "tolerances": {
+    "probabilite_code": 1e-06,
+    "probabilite_rechargement": 1e-09,
+    "baisse_metriques": {
+      "rappel": 0.03,
+      "f1": 0.03,
+      "roc_auc": 0.02
+    }
+  },
+  "lot_controle": {
+    "demandes": [
+      {
+        "age": 50,
+        "revenu_mensuel": 187000,
+        "montant_credit": 760000,
+        "duree_mois": 18,
+        "anciennete_activite": 0
+      },
+      {
+        "age": 19,
+        "revenu_mensuel": 136000,
+        "montant_credit": 140000,
+        "duree_mois": 9,
+        "anciennete_activite": 1
+      },
+      {
+        "age": 45,
+        "revenu_mensuel": 364000,
+        "montant_credit": 1000000,
+        "duree_mois": 12,
+        "anciennete_activite": 2
+      },
+      {
+        "age": 28,
+        "revenu_mensuel": 893000,
+        "montant_credit": 580000,
+        "duree_mois": 12,
+        "anciennete_activite": 1
+      },
+      {
+        "age": 50,
+        "revenu_mensuel": 189000,
+        "montant_credit": 1600000,
+        "duree_mois": 24,
+        "anciennete_activite": 7
+      },
+      {
+        "age": 24,
+        "revenu_mensuel": 362000,
+        "montant_credit": 9380000,
+        "duree_mois": 60,
+        "anciennete_activite": 1
+      },
+      {
+        "age": 31,
+        "revenu_mensuel": 165000,
+        "montant_credit": 780000,
+        "duree_mois": 36,
+        "anciennete_activite": 0
+      },
+      {
+        "age": 70,
+        "revenu_mensuel": 232000,
+        "montant_credit": 2310000,
+        "duree_mois": 18,
+        "anciennete_activite": 2
+      },
+      {
+        "age": 19,
+        "revenu_mensuel": 90000,
+        "montant_credit": 600000,
+        "duree_mois": 12,
+        "anciennete_activite": 1
+      },
+      {
+        "age": 18,
+        "revenu_mensuel": 167000,
+        "montant_credit": 440000,
+        "duree_mois": 12,
+        "anciennete_activite": 0
+      },
+      {
+        "age": 18,
+        "revenu_mensuel": 308000,
+        "montant_credit": 3990000,
+        "duree_mois": 24,
+        "anciennete_activite": 0
+      },
+      {
+        "age": 23,
+        "revenu_mensuel": 232000,
+        "montant_credit": 170000,
+        "duree_mois": 9,
+        "anciennete_activite": 2
+      },
+      {
+        "age": 70,
+        "revenu_mensuel": 254000,
+        "montant_credit": 610000,
+        "duree_mois": 6,
+        "anciennete_activite": 4
+      },
+      {
+        "age": 28,
+        "revenu_mensuel": 677000,
+        "montant_credit": 6700000,
+        "duree_mois": 18,
+        "anciennete_activite": 3
+      },
+      {
+        "age": 27,
+        "revenu_mensuel": 231000,
+        "montant_credit": 2310000,
+        "duree_mois": 18,
+        "anciennete_activite": 2
+      },
+      {
+        "age": 47,
+        "revenu_mensuel": 107000,
+        "montant_credit": 180000,
+        "duree_mois": 6,
+        "anciennete_activite": 1
+      },
+      {
+        "age": 24,
+        "revenu_mensuel": 622000,
+        "montant_credit": 1470000,
+        "duree_mois": 6,
+        "anciennete_activite": 0
+      },
+      {
+        "age": 18,
+        "revenu_mensuel": 236000,
+        "montant_credit": 1150000,
+        "duree_mois": 12,
+        "anciennete_activite": 0
+      },
+      {
+        "age": 22,
+        "revenu_mensuel": 123000,
+        "montant_credit": 280000,
+        "duree_mois": 6,
+        "anciennete_activite": 0
+      },
+      {
+        "age": 56,
+        "revenu_mensuel": 290000,
+        "montant_credit": 6520000,
+        "duree_mois": 48,
+        "anciennete_activite": 2
+      },
+      {
+        "age": 64,
+        "revenu_mensuel": 70000,
+        "montant_credit": 50000,
+        "duree_mois": 9,
+        "anciennete_activite": 10
+      },
+      {
+        "age": 56,
+        "revenu_mensuel": 255000,
+        "montant_credit": 5070000,
+        "duree_mois": 36,
+        "anciennete_activite": 16
+      },
+      {
+        "age": 42,
+        "revenu_mensuel": 129000,
+        "montant_credit": 330000,
+        "duree_mois": 18,
+        "anciennete_activite": 4
+      },
+      {
+        "age": 37,
+        "revenu_mensuel": 410000,
+        "montant_credit": 400000,
+        "duree_mois": 9,
+        "anciennete_activite": 3
+      },
+      {
+        "age": 35,
+        "revenu_mensuel": 155000,
+        "montant_credit": 450000,
+        "duree_mois": 12,
+        "anciennete_activite": 5
+      },
+      {
+        "age": 19,
+        "revenu_mensuel": 126000,
+        "montant_credit": 120000,
+        "duree_mois": 12,
+        "anciennete_activite": 1
+      },
+      {
+        "age": 45,
+        "revenu_mensuel": 562000,
+        "montant_credit": 920000,
+        "duree_mois": 12,
+        "anciennete_activite": 2
+      },
+      {
+        "age": 18,
+        "revenu_mensuel": 333000,
+        "montant_credit": 310000,
+        "duree_mois": 9,
+        "anciennete_activite": 0
+      },
+      {
+        "age": 62,
+        "revenu_mensuel": 115000,
+        "montant_credit": 680000,
+        "duree_mois": 12,
+        "anciennete_activite": 5
+      },
+      {
+        "age": 56,
+        "revenu_mensuel": 145000,
+        "montant_credit": 250000,
+        "duree_mois": 9,
+        "anciennete_activite": 8
+      },
+      {
+        "age": 19,
+        "revenu_mensuel": 654000,
+        "montant_credit": 1770000,
+        "duree_mois": 12,
+        "anciennete_activite": 1
+      },
+      {
+        "age": 56,
+        "revenu_mensuel": 118000,
+        "montant_credit": 1620000,
+        "duree_mois": 36,
+        "anciennete_activite": 6
+      },
+      {
+        "age": 46,
+        "revenu_mensuel": 184000,
+        "montant_credit": 570000,
+        "duree_mois": 12,
+        "anciennete_activite": 6
+      },
+      {
+        "age": 67,
+        "revenu_mensuel": 305000,
+        "montant_credit": 2970000,
+        "duree_mois": 36,
+        "anciennete_activite": 2
+      },
+      {
+        "age": 24,
+        "revenu_mensuel": 114000,
+        "montant_credit": 130000,
+        "duree_mois": 9,
+        "anciennete_activite": 1
+      },
+      {
+        "age": 45,
+        "revenu_mensuel": 254000,
+        "montant_credit": 1740000,
+        "duree_mois": 24,
+        "anciennete_activite": 0
+      },
+      {
+        "age": 56,
+        "revenu_mensuel": 195000,
+        "montant_credit": 50000,
+        "duree_mois": 3,
+        "anciennete_activite": 2
+      },
+      {
+        "age": 52,
+        "revenu_mensuel": 242000,
+        "montant_credit": 700000,
+        "duree_mois": 18,
+        "anciennete_activite": 2
+      },
+      {
+        "age": 19,
+        "revenu_mensuel": 211000,
+        "montant_credit": 670000,
+        "duree_mois": 12,
+        "anciennete_activite": 0
+      },
+      {
+        "age": 24,
+        "revenu_mensuel": 312000,
+        "montant_credit": 620000,
+        "duree_mois": 12,
+        "anciennete_activite": 6
+      },
+      {
+        "age": 57,
+        "revenu_mensuel": 157000,
+        "montant_credit": 4250000,
+        "duree_mois": 48,
+        "anciennete_activite": 5
+      },
+      {
+        "age": 32,
+        "revenu_mensuel": 131000,
+        "montant_credit": 220000,
+        "duree_mois": 3,
+        "anciennete_activite": 9
+      },
+      {
+        "age": 30,
+        "revenu_mensuel": 131000,
+        "montant_credit": 740000,
+        "duree_mois": 18,
+        "anciennete_activite": 4
+      },
+      {
+        "age": 57,
+        "revenu_mensuel": 415000,
+        "montant_credit": 270000,
+        "duree_mois": 3,
+        "anciennete_activite": 5
+      },
+      {
+        "age": 67,
+        "revenu_mensuel": 559000,
+        "montant_credit": 1360000,
+        "duree_mois": 6,
+        "anciennete_activite": 12
+      },
+      {
+        "age": 60,
+        "revenu_mensuel": 162000,
+        "montant_credit": 1160000,
+        "duree_mois": 12,
+        "anciennete_activite": 13
+      },
+      {
+        "age": 61,
+        "revenu_mensuel": 184000,
+        "montant_credit": 260000,
+        "duree_mois": 3,
+        "anciennete_activite": 0
+      },
+      {
+        "age": 33,
+        "revenu_mensuel": 248000,
+        "montant_credit": 750000,
+        "duree_mois": 6,
+        "anciennete_activite": 9
+      },
+      {
+        "age": 63,
+        "revenu_mensuel": 131000,
+        "montant_credit": 810000,
+        "duree_mois": 36,
+        "anciennete_activite": 0
+      },
+      {
+        "age": 61,
+        "revenu_mensuel": 490000,
+        "montant_credit": 2520000,
+        "duree_mois": 12,
+        "anciennete_activite": 6
+      },
+      {
+        "age": 66,
+        "revenu_mensuel": 337000,
+        "montant_credit": 1160000,
+        "duree_mois": 12,
+        "anciennete_activite": 10
+      },
+      {
+        "age": 25,
+        "revenu_mensuel": 141000,
+        "montant_credit": 500000,
+        "duree_mois": 12,
+        "anciennete_activite": 0
+      },
+      {
+        "age": 69,
+        "revenu_mensuel": 311000,
+        "montant_credit": 4040000,
+        "duree_mois": 24,
+        "anciennete_activite": 2
+      },
+      {
+        "age": 42,
+        "revenu_mensuel": 241000,
+        "montant_credit": 430000,
+        "duree_mois": 24,
+        "anciennete_activite": 4
+      },
+      {
+        "age": 48,
+        "revenu_mensuel": 204000,
+        "montant_credit": 1510000,
+        "duree_mois": 18,
+        "anciennete_activite": 16
+      },
+      {
+        "age": 18,
+        "revenu_mensuel": 123000,
+        "montant_credit": 160000,
+        "duree_mois": 18,
+        "anciennete_activite": 0
+      },
+      {
+        "age": 62,
+        "revenu_mensuel": 268000,
+        "montant_credit": 2680000,
+        "duree_mois": 24,
+        "anciennete_activite": 0
+      },
+      {
+        "age": 52,
+        "revenu_mensuel": 189000,
+        "montant_credit": 1920000,
+        "duree_mois": 18,
+        "anciennete_activite": 9
+      },
+      {
+        "age": 21,
+        "revenu_mensuel": 421000,
+        "montant_credit": 1010000,
+        "duree_mois": 6,
+        "anciennete_activite": 2
+      },
+      {
+        "age": 39,
+        "revenu_mensuel": 414000,
+        "montant_credit": 3680000,
+        "duree_mois": 24,
+        "anciennete_activite": 11
+      },
+      {
+        "age": 45,
+        "revenu_mensuel": 304000,
+        "montant_credit": 1640000,
+        "duree_mois": 12,
+        "anciennete_activite": 0
+      },
+      {
+        "age": 53,
+        "revenu_mensuel": 330000,
+        "montant_credit": 4290000,
+        "duree_mois": 24,
+        "anciennete_activite": 3
+      },
+      {
+        "age": 20,
+        "revenu_mensuel": 137000,
+        "montant_credit": 830000,
+        "duree_mois": 12,
+        "anciennete_activite": 1
+      },
+      {
+        "age": 20,
+        "revenu_mensuel": 113000,
+        "montant_credit": 570000,
+        "duree_mois": 24,
+        "anciennete_activite": 1
+      },
+      {
+        "age": 64,
+        "revenu_mensuel": 280000,
+        "montant_credit": 620000,
+        "duree_mois": 12,
+        "anciennete_activite": 7
+      },
+      {
+        "age": 60,
+        "revenu_mensuel": 287000,
+        "montant_credit": 670000,
+        "duree_mois": 24,
+        "anciennete_activite": 1
+      },
+      {
+        "age": 28,
+        "revenu_mensuel": 30000,
+        "montant_credit": 420000,
+        "duree_mois": 24,
+        "anciennete_activite": 10
+      },
+      {
+        "age": 48,
+        "revenu_mensuel": 370000,
+        "montant_credit": 1190000,
+        "duree_mois": 36,
+        "anciennete_activite": 0
+      },
+      {
+        "age": 44,
+        "revenu_mensuel": 114000,
+        "montant_credit": 620000,
+        "duree_mois": 12,
+        "anciennete_activite": 3
+      },
+      {
+        "age": 41,
+        "revenu_mensuel": 204000,
+        "montant_credit": 2800000,
+        "duree_mois": 60,
+        "anciennete_activite": 1
+      },
+      {
+        "age": 63,
+        "revenu_mensuel": 160000,
+        "montant_credit": 2240000,
+        "duree_mois": 24,
+        "anciennete_activite": 6
+      },
+      {
+        "age": 42,
+        "revenu_mensuel": 127000,
+        "montant_credit": 700000,
+        "duree_mois": 12,
+        "anciennete_activite": 0
+      },
+      {
+        "age": 22,
+        "revenu_mensuel": 484000,
+        "montant_credit": 1510000,
+        "duree_mois": 12,
+        "anciennete_activite": 4
+      },
+      {
+        "age": 60,
+        "revenu_mensuel": 171000,
+        "montant_credit": 150000,
+        "duree_mois": 6,
+        "anciennete_activite": 2
+      },
+      {
+        "age": 21,
+        "revenu_mensuel": 195000,
+        "montant_credit": 920000,
+        "duree_mois": 12,
+        "anciennete_activite": 3
+      },
+      {
+        "age": 47,
+        "revenu_mensuel": 473000,
+        "montant_credit": 5840000,
+        "duree_mois": 24,
+        "anciennete_activite": 4
+      },
+      {
+        "age": 20,
+        "revenu_mensuel": 82000,
+        "montant_credit": 920000,
+        "duree_mois": 24,
+        "anciennete_activite": 2
+      },
+      {
+        "age": 33,
+        "revenu_mensuel": 278000,
+        "montant_credit": 3210000,
+        "duree_mois": 48,
+        "anciennete_activite": 2
+      },
+      {
+        "age": 20,
+        "revenu_mensuel": 228000,
+        "montant_credit": 710000,
+        "duree_mois": 6,
+        "anciennete_activite": 2
+      },
+      {
+        "age": 23,
+        "revenu_mensuel": 250000,
+        "montant_credit": 1340000,
+        "duree_mois": 18,
+        "anciennete_activite": 5
+      },
+      {
+        "age": 35,
+        "revenu_mensuel": 348000,
+        "montant_credit": 1300000,
+        "duree_mois": 12,
+        "anciennete_activite": 3
+      },
+      {
+        "age": 60,
+        "revenu_mensuel": 417000,
+        "montant_credit": 1120000,
+        "duree_mois": 6,
+        "anciennete_activite": 0
+      },
+      {
+        "age": 20,
+        "revenu_mensuel": 618000,
+        "montant_credit": 1200000,
+        "duree_mois": 9,
+        "anciennete_activite": 2
+      },
+      {
+        "age": 59,
+        "revenu_mensuel": 305000,
+        "montant_credit": 1150000,
+        "duree_mois": 18,
+        "anciennete_activite": 3
+      },
+      {
+        "age": 62,
+        "revenu_mensuel": 189000,
+        "montant_credit": 210000,
+        "duree_mois": 18,
+        "anciennete_activite": 2
+      },
+      {
+        "age": 56,
+        "revenu_mensuel": 169000,
+        "montant_credit": 1180000,
+        "duree_mois": 36,
+        "anciennete_activite": 6
+      },
+      {
+        "age": 33,
+        "revenu_mensuel": 291000,
+        "montant_credit": 860000,
+        "duree_mois": 12,
+        "anciennete_activite": 8
+      },
+      {
+        "age": 45,
+        "revenu_mensuel": 451000,
+        "montant_credit": 2010000,
+        "duree_mois": 18,
+        "anciennete_activite": 0
+      },
+      {
+        "age": 64,
+        "revenu_mensuel": 86000,
+        "montant_credit": 570000,
+        "duree_mois": 12,
+        "anciennete_activite": 1
+      },
+      {
+        "age": 68,
+        "revenu_mensuel": 231000,
+        "montant_credit": 3370000,
+        "duree_mois": 36,
+        "anciennete_activite": 7
+      },
+      {
+        "age": 22,
+        "revenu_mensuel": 162000,
+        "montant_credit": 110000,
+        "duree_mois": 9,
+        "anciennete_activite": 1
+      },
+      {
+        "age": 21,
+        "revenu_mensuel": 632000,
+        "montant_credit": 1810000,
+        "duree_mois": 6,
+        "anciennete_activite": 2
+      },
+      {
+        "age": 37,
+        "revenu_mensuel": 266000,
+        "montant_credit": 1460000,
+        "duree_mois": 12,
+        "anciennete_activite": 1
+      },
+      {
+        "age": 70,
+        "revenu_mensuel": 334000,
+        "montant_credit": 860000,
+        "duree_mois": 12,
+        "anciennete_activite": 5
+      },
+      {
+        "age": 62,
+        "revenu_mensuel": 173000,
+        "montant_credit": 170000,
+        "duree_mois": 6,
+        "anciennete_activite": 8
+      },
+      {
+        "age": 59,
+        "revenu_mensuel": 213000,
+        "montant_credit": 1460000,
+        "duree_mois": 12,
+        "anciennete_activite": 4
+      },
+      {
+        "age": 55,
+        "revenu_mensuel": 126000,
+        "montant_credit": 1640000,
+        "duree_mois": 24,
+        "anciennete_activite": 0
+      },
+      {
+        "age": 42,
+        "revenu_mensuel": 94000,
+        "montant_credit": 740000,
+        "duree_mois": 36,
+        "anciennete_activite": 5
+      },
+      {
+        "age": 26,
+        "revenu_mensuel": 338000,
+        "montant_credit": 2400000,
+        "duree_mois": 18,
+        "anciennete_activite": 8
+      },
+      {
+        "age": 37,
+        "revenu_mensuel": 66000,
+        "montant_credit": 230000,
+        "duree_mois": 9,
+        "anciennete_activite": 2
+      },
+      {
+        "age": 35,
+        "revenu_mensuel": 66000,
+        "montant_credit": 220000,
+        "duree_mois": 6,
+        "anciennete_activite": 6
+      },
+      {
+        "age": 54,
+        "revenu_mensuel": 112000,
+        "montant_credit": 220000,
+        "duree_mois": 6,
+        "anciennete_activite": 0
+      },
+      {
+        "age": 44,
+        "revenu_mensuel": 140000,
+        "montant_credit": 50000,
+        "duree_mois": 6,
+        "anciennete_activite": 3
+      },
+      {
+        "age": 39,
+        "revenu_mensuel": 341000,
+        "montant_credit": 1660000,
+        "duree_mois": 9,
+        "anciennete_activite": 11
+      },
+      {
+        "age": 52,
+        "revenu_mensuel": 175000,
+        "montant_credit": 780000,
+        "duree_mois": 12,
+        "anciennete_activite": 5
+      },
+      {
+        "age": 52,
+        "revenu_mensuel": 297000,
+        "montant_credit": 1830000,
+        "duree_mois": 18,
+        "anciennete_activite": 2
+      },
+      {
+        "age": 20,
+        "revenu_mensuel": 450000,
+        "montant_credit": 1000000,
+        "duree_mois": 12,
+        "anciennete_activite": 2
+      },
+      {
+        "age": 56,
+        "revenu_mensuel": 108000,
+        "montant_credit": 2290000,
+        "duree_mois": 36,
+        "anciennete_activite": 11
+      },
+      {
+        "age": 28,
+        "revenu_mensuel": 243000,
+        "montant_credit": 210000,
+        "duree_mois": 12,
+        "anciennete_activite": 2
+      },
+      {
+        "age": 64,
+        "revenu_mensuel": 394000,
+        "montant_credit": 3430000,
+        "duree_mois": 24,
+        "anciennete_activite": 13
+      },
+      {
+        "age": 58,
+        "revenu_mensuel": 290000,
+        "montant_credit": 8260000,
+        "duree_mois": 60,
+        "anciennete_activite": 4
+      },
+      {
+        "age": 24,
+        "revenu_mensuel": 77000,
+        "montant_credit": 230000,
+        "duree_mois": 6,
+        "anciennete_activite": 6
+      },
+      {
+        "age": 42,
+        "revenu_mensuel": 84000,
+        "montant_credit": 300000,
+        "duree_mois": 6,
+        "anciennete_activite": 3
+      },
+      {
+        "age": 37,
+        "revenu_mensuel": 535000,
+        "montant_credit": 250000,
+        "duree_mois": 6,
+        "anciennete_activite": 8
+      },
+      {
+        "age": 46,
+        "revenu_mensuel": 106000,
+        "montant_credit": 360000,
+        "duree_mois": 9,
+        "anciennete_activite": 26
+      },
+      {
+        "age": 42,
+        "revenu_mensuel": 82000,
+        "montant_credit": 420000,
+        "duree_mois": 18,
+        "anciennete_activite": 0
+      },
+      {
+        "age": 24,
+        "revenu_mensuel": 1254000,
+        "montant_credit": 2040000,
+        "duree_mois": 18,
+        "anciennete_activite": 4
+      },
+      {
+        "age": 62,
+        "revenu_mensuel": 168000,
+        "montant_credit": 380000,
+        "duree_mois": 12,
+        "anciennete_activite": 4
+      },
+      {
+        "age": 28,
+        "revenu_mensuel": 376000,
+        "montant_credit": 7840000,
+        "duree_mois": 36,
+        "anciennete_activite": 4
+      },
+      {
+        "age": 52,
+        "revenu_mensuel": 90000,
+        "montant_credit": 60000,
+        "duree_mois": 12,
+        "anciennete_activite": 6
+      },
+      {
+        "age": 46,
+        "revenu_mensuel": 506000,
+        "montant_credit": 900000,
+        "duree_mois": 6,
+        "anciennete_activite": 1
+      },
+      {
+        "age": 33,
+        "revenu_mensuel": 354000,
+        "montant_credit": 1230000,
+        "duree_mois": 18,
+        "anciennete_activite": 0
+      },
+      {
+        "age": 60,
+        "revenu_mensuel": 170000,
+        "montant_credit": 180000,
+        "duree_mois": 6,
+        "anciennete_activite": 5
+      },
+      {
+        "age": 34,
+        "revenu_mensuel": 152000,
+        "montant_credit": 3780000,
+        "duree_mois": 60,
+        "anciennete_activite": 0
+      },
+      {
+        "age": 37,
+        "revenu_mensuel": 116000,
+        "montant_credit": 360000,
+        "duree_mois": 24,
+        "anciennete_activite": 0
+      },
+      {
+        "age": 46,
+        "revenu_mensuel": 232000,
+        "montant_credit": 320000,
+        "duree_mois": 3,
+        "anciennete_activite": 2
+      },
+      {
+        "age": 24,
+        "revenu_mensuel": 290000,
+        "montant_credit": 270000,
+        "duree_mois": 9,
+        "anciennete_activite": 1
+      },
+      {
+        "age": 43,
+        "revenu_mensuel": 158000,
+        "montant_credit": 1460000,
+        "duree_mois": 18,
+        "anciennete_activite": 0
+      },
+      {
+        "age": 66,
+        "revenu_mensuel": 116000,
+        "montant_credit": 480000,
+        "duree_mois": 24,
+        "anciennete_activite": 2
+      },
+      {
+        "age": 55,
+        "revenu_mensuel": 183000,
+        "montant_credit": 750000,
+        "duree_mois": 24,
+        "anciennete_activite": 14
+      },
+      {
+        "age": 61,
+        "revenu_mensuel": 187000,
+        "montant_credit": 820000,
+        "duree_mois": 9,
+        "anciennete_activite": 0
+      },
+      {
+        "age": 34,
+        "revenu_mensuel": 185000,
+        "montant_credit": 810000,
+        "duree_mois": 9,
+        "anciennete_activite": 8
+      },
+      {
+        "age": 59,
+        "revenu_mensuel": 912000,
+        "montant_credit": 1440000,
+        "duree_mois": 9,
+        "anciennete_activite": 0
+      },
+      {
+        "age": 63,
+        "revenu_mensuel": 412000,
+        "montant_credit": 5250000,
+        "duree_mois": 24,
+        "anciennete_activite": 0
+      },
+      {
+        "age": 60,
+        "revenu_mensuel": 151000,
+        "montant_credit": 390000,
+        "duree_mois": 12,
+        "anciennete_activite": 3
+      },
+      {
+        "age": 56,
+        "revenu_mensuel": 84000,
+        "montant_credit": 250000,
+        "duree_mois": 12,
+        "anciennete_activite": 3
+      },
+      {
+        "age": 44,
+        "revenu_mensuel": 551000,
+        "montant_credit": 5070000,
+        "duree_mois": 24,
+        "anciennete_activite": 8
+      },
+      {
+        "age": 41,
+        "revenu_mensuel": 363000,
+        "montant_credit": 7650000,
+        "duree_mois": 60,
+        "anciennete_activite": 4
+      },
+      {
+        "age": 63,
+        "revenu_mensuel": 730000,
+        "montant_credit": 1540000,
+        "duree_mois": 36,
+        "anciennete_activite": 0
+      },
+      {
+        "age": 60,
+        "revenu_mensuel": 280000,
+        "montant_credit": 850000,
+        "duree_mois": 12,
+        "anciennete_activite": 11
+      },
+      {
+        "age": 32,
+        "revenu_mensuel": 163000,
+        "montant_credit": 4530000,
+        "duree_mois": 48,
+        "anciennete_activite": 1
+      },
+      {
+        "age": 56,
+        "revenu_mensuel": 593000,
+        "montant_credit": 2910000,
+        "duree_mois": 9,
+        "anciennete_activite": 2
+      },
+      {
+        "age": 24,
+        "revenu_mensuel": 362000,
+        "montant_credit": 960000,
+        "duree_mois": 12,
+        "anciennete_activite": 6
+      },
+      {
+        "age": 46,
+        "revenu_mensuel": 52000,
+        "montant_credit": 130000,
+        "duree_mois": 12,
+        "anciennete_activite": 0
+      },
+      {
+        "age": 43,
+        "revenu_mensuel": 229000,
+        "montant_credit": 650000,
+        "duree_mois": 12,
+        "anciennete_activite": 0
+      },
+      {
+        "age": 25,
+        "revenu_mensuel": 102000,
+        "montant_credit": 630000,
+        "duree_mois": 12,
+        "anciennete_activite": 0
+      },
+      {
+        "age": 62,
+        "revenu_mensuel": 91000,
+        "montant_credit": 260000,
+        "duree_mois": 48,
+        "anciennete_activite": 2
+      },
+      {
+        "age": 35,
+        "revenu_mensuel": 139000,
+        "montant_credit": 230000,
+        "duree_mois": 9,
+        "anciennete_activite": 7
+      },
+      {
+        "age": 32,
+        "revenu_mensuel": 579000,
+        "montant_credit": 3250000,
+        "duree_mois": 18,
+        "anciennete_activite": 14
+      },
+      {
+        "age": 24,
+        "revenu_mensuel": 258000,
+        "montant_credit": 720000,
+        "duree_mois": 6,
+        "anciennete_activite": 3
+      },
+      {
+        "age": 69,
+        "revenu_mensuel": 367000,
+        "montant_credit": 1330000,
+        "duree_mois": 24,
+        "anciennete_activite": 4
+      },
+      {
+        "age": 31,
+        "revenu_mensuel": 242000,
+        "montant_credit": 340000,
+        "duree_mois": 6,
+        "anciennete_activite": 8
+      },
+      {
+        "age": 60,
+        "revenu_mensuel": 109000,
+        "montant_credit": 260000,
+        "duree_mois": 18,
+        "anciennete_activite": 0
+      },
+      {
+        "age": 32,
+        "revenu_mensuel": 411000,
+        "montant_credit": 4000000,
+        "duree_mois": 36,
+        "anciennete_activite": 2
+      },
+      {
+        "age": 25,
+        "revenu_mensuel": 202000,
+        "montant_credit": 1450000,
+        "duree_mois": 12,
+        "anciennete_activite": 0
+      },
+      {
+        "age": 38,
+        "revenu_mensuel": 248000,
+        "montant_credit": 860000,
+        "duree_mois": 36,
+        "anciennete_activite": 4
+      },
+      {
+        "age": 38,
+        "revenu_mensuel": 292000,
+        "montant_credit": 420000,
+        "duree_mois": 12,
+        "anciennete_activite": 1
+      },
+      {
+        "age": 58,
+        "revenu_mensuel": 188000,
+        "montant_credit": 430000,
+        "duree_mois": 18,
+        "anciennete_activite": 15
+      },
+      {
+        "age": 66,
+        "revenu_mensuel": 49000,
+        "montant_credit": 300000,
+        "duree_mois": 12,
+        "anciennete_activite": 0
+      },
+      {
+        "age": 39,
+        "revenu_mensuel": 73000,
+        "montant_credit": 330000,
+        "duree_mois": 18,
+        "anciennete_activite": 8
+      },
+      {
+        "age": 39,
+        "revenu_mensuel": 139000,
+        "montant_credit": 720000,
+        "duree_mois": 12,
+        "anciennete_activite": 8
+      },
+      {
+        "age": 54,
+        "revenu_mensuel": 501000,
+        "montant_credit": 3140000,
+        "duree_mois": 24,
+        "anciennete_activite": 12
+      },
+      {
+        "age": 59,
+        "revenu_mensuel": 193000,
+        "montant_credit": 1230000,
+        "duree_mois": 24,
+        "anciennete_activite": 4
+      },
+      {
+        "age": 69,
+        "revenu_mensuel": 359000,
+        "montant_credit": 5600000,
+        "duree_mois": 36,
+        "anciennete_activite": 2
+      },
+      {
+        "age": 58,
+        "revenu_mensuel": 262000,
+        "montant_credit": 890000,
+        "duree_mois": 9,
+        "anciennete_activite": 2
+      },
+      {
+        "age": 61,
+        "revenu_mensuel": 471000,
+        "montant_credit": 450000,
+        "duree_mois": 6,
+        "anciennete_activite": 0
+      },
+      {
+        "age": 57,
+        "revenu_mensuel": 90000,
+        "montant_credit": 110000,
+        "duree_mois": 12,
+        "anciennete_activite": 9
+      },
+      {
+        "age": 24,
+        "revenu_mensuel": 84000,
+        "montant_credit": 220000,
+        "duree_mois": 6,
+        "anciennete_activite": 6
+      },
+      {
+        "age": 49,
+        "revenu_mensuel": 288000,
+        "montant_credit": 1800000,
+        "duree_mois": 18,
+        "anciennete_activite": 4
+      },
+      {
+        "age": 46,
+        "revenu_mensuel": 249000,
+        "montant_credit": 370000,
+        "duree_mois": 3,
+        "anciennete_activite": 6
+      },
+      {
+        "age": 19,
+        "revenu_mensuel": 201000,
+        "montant_credit": 950000,
+        "duree_mois": 18,
+        "anciennete_activite": 0
+      },
+      {
+        "age": 62,
+        "revenu_mensuel": 86000,
+        "montant_credit": 580000,
+        "duree_mois": 18,
+        "anciennete_activite": 24
+      },
+      {
+        "age": 56,
+        "revenu_mensuel": 181000,
+        "montant_credit": 550000,
+        "duree_mois": 12,
+        "anciennete_activite": 0
+      },
+      {
+        "age": 37,
+        "revenu_mensuel": 277000,
+        "montant_credit": 1590000,
+        "duree_mois": 24,
+        "anciennete_activite": 10
+      },
+      {
+        "age": 42,
+        "revenu_mensuel": 120000,
+        "montant_credit": 350000,
+        "duree_mois": 6,
+        "anciennete_activite": 7
+      },
+      {
+        "age": 68,
+        "revenu_mensuel": 130000,
+        "montant_credit": 1330000,
+        "duree_mois": 36,
+        "anciennete_activite": 7
+      },
+      {
+        "age": 56,
+        "revenu_mensuel": 177000,
+        "montant_credit": 490000,
+        "duree_mois": 6,
+        "anciennete_activite": 7
+      },
+      {
+        "age": 70,
+        "revenu_mensuel": 110000,
+        "montant_credit": 210000,
+        "duree_mois": 6,
+        "anciennete_activite": 5
+      },
+      {
+        "age": 35,
+        "revenu_mensuel": 111000,
+        "montant_credit": 760000,
+        "duree_mois": 48,
+        "anciennete_activite": 0
+      },
+      {
+        "age": 18,
+        "revenu_mensuel": 128000,
+        "montant_credit": 630000,
+        "duree_mois": 12,
+        "anciennete_activite": 0
+      },
+      {
+        "age": 26,
+        "revenu_mensuel": 695000,
+        "montant_credit": 5470000,
+        "duree_mois": 18,
+        "anciennete_activite": 0
+      },
+      {
+        "age": 48,
+        "revenu_mensuel": 259000,
+        "montant_credit": 1050000,
+        "duree_mois": 36,
+        "anciennete_activite": 4
+      },
+      {
+        "age": 61,
+        "revenu_mensuel": 141000,
+        "montant_credit": 100000,
+        "duree_mois": 3,
+        "anciennete_activite": 7
+      },
+      {
+        "age": 24,
+        "revenu_mensuel": 522000,
+        "montant_credit": 3010000,
+        "duree_mois": 24,
+        "anciennete_activite": 1
+      },
+      {
+        "age": 39,
+        "revenu_mensuel": 137000,
+        "montant_credit": 920000,
+        "duree_mois": 24,
+        "anciennete_activite": 5
+      },
+      {
+        "age": 36,
+        "revenu_mensuel": 280000,
+        "montant_credit": 1700000,
+        "duree_mois": 12,
+        "anciennete_activite": 1
+      },
+      {
+        "age": 46,
+        "revenu_mensuel": 276000,
+        "montant_credit": 4330000,
+        "duree_mois": 36,
+        "anciennete_activite": 5
+      },
+      {
+        "age": 28,
+        "revenu_mensuel": 71000,
+        "montant_credit": 200000,
+        "duree_mois": 24,
+        "anciennete_activite": 8
+      },
+      {
+        "age": 62,
+        "revenu_mensuel": 385000,
+        "montant_credit": 1640000,
+        "duree_mois": 12,
+        "anciennete_activite": 4
+      },
+      {
+        "age": 58,
+        "revenu_mensuel": 126000,
+        "montant_credit": 130000,
+        "duree_mois": 3,
+        "anciennete_activite": 6
+      },
+      {
+        "age": 52,
+        "revenu_mensuel": 315000,
+        "montant_credit": 1580000,
+        "duree_mois": 9,
+        "anciennete_activite": 0
+      },
+      {
+        "age": 35,
+        "revenu_mensuel": 174000,
+        "montant_credit": 160000,
+        "duree_mois": 18,
+        "anciennete_activite": 7
+      },
+      {
+        "age": 35,
+        "revenu_mensuel": 141000,
+        "montant_credit": 210000,
+        "duree_mois": 3,
+        "anciennete_activite": 3
+      },
+      {
+        "age": 69,
+        "revenu_mensuel": 166000,
+        "montant_credit": 1480000,
+        "duree_mois": 18,
+        "anciennete_activite": 5
+      },
+      {
+        "age": 41,
+        "revenu_mensuel": 110000,
+        "montant_credit": 1920000,
+        "duree_mois": 60,
+        "anciennete_activite": 23
+      },
+      {
+        "age": 68,
+        "revenu_mensuel": 119000,
+        "montant_credit": 100000,
+        "duree_mois": 12,
+        "anciennete_activite": 2
+      },
+      {
+        "age": 70,
+        "revenu_mensuel": 228000,
+        "montant_credit": 880000,
+        "duree_mois": 48,
+        "anciennete_activite": 1
+      },
+      {
+        "age": 69,
+        "revenu_mensuel": 427000,
+        "montant_credit": 460000,
+        "duree_mois": 3,
+        "anciennete_activite": 4
+      },
+      {
+        "age": 39,
+        "revenu_mensuel": 237000,
+        "montant_credit": 1220000,
+        "duree_mois": 18,
+        "anciennete_activite": 3
+      },
+      {
+        "age": 21,
+        "revenu_mensuel": 171000,
+        "montant_credit": 260000,
+        "duree_mois": 9,
+        "anciennete_activite": 1
+      }
+    ],
+    "probabilites": [
+      0.3818131278367773,
+      0.34932163627951157,
+      0.33027975245917945,
+      0.22481019495914087,
+      0.35605325904852814,
+      0.7673128503532589,
+      0.38031966305837134,
+      0.6546437446204448,
+      0.8488939900119402,
+      0.5068170801550332,
+      0.8478350723558238,
+      0.26545936217634675,
+      0.38886581452804214,
+      0.7561017046847285,
+      0.8028877616871735,
+      0.43912142542375976,
+      0.6659327290394709,
+      0.7245263300795812,
+      0.6927690985950862,
+      0.6532435278198085,
+      0.07262470428281305,
+      0.34926194130730254,
+      0.23311149425086017,
+      0.2126660317874754,
+      0.3262706127859244,
+      0.31632317624976747,
+      0.2280013741203924,
+      0.34692518658923865,
+      0.5380360710405713,
+      0.15451114743668776,
+      0.4467385476416962,
+      0.42679043782726195,
+      0.2755807544860863,
+      0.33128574514205594,
+      0.3471866003328089,
+      0.4804149837129812,
+      0.17666972798718533,
+      0.24869088667809258,
+      0.554485564259008,
+      0.24795920501650603,
+      0.698480129804189,
+      0.6384464030103683,
+      0.4747513351880281,
+      0.20939717180555853,
+      0.2014725389333551,
+      0.4456505823273064,
+      0.6445316545270492,
+      0.5422513507969233,
+      0.3052714215555847,
+      0.39326707541794226,
+      0.15566082752666344,
+      0.5782947476842171,
+      0.6460881352652555,
+      0.17646331860876413,
+      0.20825866038927385,
+      0.3458030497447199,
+      0.576588498757733,
+      0.5561461873749458,
+      0.6415665914182134,
+      0.2995293940961418,
+      0.6680855989419201,
+      0.681809169809559,
+      0.801509488254308,
+      0.48403281912392004,
+      0.13970654669362775,
+      0.194676397759366,
+      0.7017923094237922,
+      0.2555150705060383,
+      0.6199320178660134,
+      0.4725941401618003,
+      0.6309487271712404,
+      0.7093965596140669,
+      0.4002341421066186,
+      0.21051412625818458,
+      0.6268965024477535,
+      0.6387181074939229,
+      0.7687875740503173,
+      0.4607844496103462,
+      0.7848574250200421,
+      0.4393206205353576,
+      0.4464186659621144,
+      0.5952203324287331,
+      0.40122446994551564,
+      0.24609638749582066,
+      0.15084045826227646,
+      0.2130029397948672,
+      0.25377981959290374,
+      0.40821151939709305,
+      0.7163987742645168,
+      0.3629693684968908,
+      0.2941311068366373,
+      0.7213969911176303,
+      0.6854421729764529,
+      0.1742321290434066,
+      0.12306645237916566,
+      0.6627919267454503,
+      0.7641129774336,
+      0.31855526608230844,
+      0.4586574838775768,
+      0.6045888388394789,
+      0.708948439986612,
+      0.4973940857528925,
+      0.1755036608613039,
+      0.49943559658500825,
+      0.4114710276436408,
+      0.45307503114951836,
+      0.3739448892075227,
+      0.5594593417385195,
+      0.24164523621061945,
+      0.17465212286543125,
+      0.622884981005474,
+      0.6812471195492396,
+      0.7861768591983919,
+      0.11326196142142907,
+      0.0686550873777322,
+      0.5115729277141096,
+      0.20459483513809762,
+      0.20361668391125073,
+      0.7955413828268985,
+      0.1195954943817569,
+      0.42522203828171734,
+      0.3971627330149167,
+      0.18003764012467172,
+      0.7558702886248204,
+      0.3417903065068389,
+      0.6324727382238575,
+      0.3017499703419468,
+      0.7631022457460869,
+      0.2353187302837777,
+      0.08104448040117852,
+      0.6593294271509256,
+      0.5509665493746948,
+      0.2504969686039072,
+      0.7014982353022089,
+      0.25620287076363285,
+      0.3170675811970734,
+      0.36574865147454305,
+      0.5307856851025876,
+      0.17672025982924064,
+      0.13484225184416426,
+      0.8600799158038617,
+      0.6699713651325965,
+      0.30099390738446136,
+      0.40101894244089104,
+      0.41230420276405,
+      0.8185132438747195,
+      0.19149046625407418,
+      0.22237916776531028,
+      0.18944523543198646,
+      0.6920245242592197,
+      0.15619600134243303,
+      0.25032803600883097,
+      0.25475753028105885,
+      0.4696369146085282,
+      0.8678449107228908,
+      0.21694525953006097,
+      0.26966242646329364,
+      0.05443255480358585,
+      0.6984889458972877,
+      0.2713185832291157,
+      0.46609336113387967,
+      0.13961985973064103,
+      0.297098466703319,
+      0.5254146241024346,
+      0.46651217562115543,
+      0.2412340324648127,
+      0.09791603065436584,
+      0.6047033247495293,
+      0.41627015087009867,
+      0.5651308755466673,
+      0.560437271191865,
+      0.06848101353947449,
+      0.38425921999879864,
+      0.20692349614078115,
+      0.5552221409612923,
+      0.24232875095451606,
+      0.4517188082502934,
+      0.28606326626184436,
+      0.4096825200664774,
+      0.7409278729680052,
+      0.713440973280909,
+      0.20022192684048024,
+      0.19475490568033615,
+      0.46641263449777554,
+      0.37329046466143334,
+      0.7406154922069191,
+      0.5490629084120183,
+      0.1928901443891722,
+      0.35804688925238554,
+      0.33639425864976363,
+      0.7572869337460231,
+      0.13349491704497818,
+      0.7037071908366135,
+      0.5090341457434674,
+      0.09380051195918049,
+      0.1443940814134118,
+      0.18767558037616675,
+      0.3352116339361741,
+      0.4137408285369033,
+      0.3989290055817148
+    ]
+  }
+}
