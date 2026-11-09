@@ -2,7 +2,7 @@
 
 Stratégie de test et qualification d'un système IA d'estimation du risque de défaut de remboursement (microfinance) : validation des données, API FastAPI, tests fonctionnels, d'intégration, de robustesse, de non-régression et de performance, automatisés avec GitHub Actions.
 
-**Auteur :** Mohamed KABORE — **Module :** Test logiciel (ESMT) — **Enseignant :** M. Moustapha DER
+**Auteur :** Mohamed KABORE — **Module :** Test logiciel (ESMT) — **Enseignant :** Dr. Moustapha DER
 
 [![Tests CreditRisk-Test](https://github.com/Maho226/CreditRisk-Test/actions/workflows/tests.yml/badge.svg)](https://github.com/Maho226/CreditRisk-Test/actions/workflows/tests.yml)
 
