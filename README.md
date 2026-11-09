@@ -8,6 +8,10 @@ Stratégie de test et qualification d'un système IA d'estimation du risque de d
 
 > **Données synthétiques.** Le jeu `data/credit_synthetique.csv` est généré par un script reproductible ([`data/README.md`](data/README.md)). Il sert à tester le système et **ne permet pas de démontrer la performance réelle d'un modèle de crédit**.
 
+## Résultat de la qualification
+
+Le système **réussit la validation technique** (235 tests automatisés, couverture de 87 %, CI bloquante), mais le modèle **n'atteint pas les critères métier** sur le jeu de test (v1 : rappel 0,670 < 0,70 ; v2 : F1 0,441 < 0,45). **Il n'est pas apte à une phase pilote décisionnelle.** Voir le [rapport de qualification](docs/rapport_qualification.md).
+
 ## Système testé
 
 ```
@@ -91,6 +95,7 @@ La branche `main` est protégée : Pull Request obligatoire et réussite des deu
 
 | Document | Contenu |
 |---|---|
+| [`docs/rapport_qualification.md`](docs/rapport_qualification.md) | **Rapport final de qualification** : résultats, anomalies, décision, question de synthèse |
 | [`docs/plan_de_test.md`](docs/plan_de_test.md) | Contrat, stratégie, matrice de traçabilité EX01–EX20, cas de test CT01–CT32, critères |
 | [`docs/registre_anomalies.md`](docs/registre_anomalies.md) | Analyse de robustesse, anomalies A1–A6, corrections de la version 1.1 |
 | [`docs/rapport_non_regression.md`](docs/rapport_non_regression.md) | Référence v1, code 1.1, modèle v2 |
