@@ -35,7 +35,17 @@ warnings.filterwarnings("ignore", message="Unknown solver options")  # avertisse
 RAPPEL_MIN_VALIDATION = 0.75  # marge de 0,05 au-dessus du critère d'acceptation (0,70)
 
 VERSIONS = {
-    "v1": {"algorithme": "Régression logistique (class_weight='balanced')", "grille_C": [0.01, 0.1, 1.0, 10.0]},
+    "v1": {
+        "algorithme": "Régression logistique (class_weight='balanced')",
+        "grille_C": [0.01, 0.1, 1.0, 10.0],
+        "rappel_min_validation": RAPPEL_MIN_VALIDATION,
+    },
+    # v2 : même algorithme, seuil choisi avec une marge plus large sur le rappel (anomalie A5)
+    "v2": {
+        "algorithme": "Régression logistique (class_weight='balanced')",
+        "grille_C": [0.01, 0.1, 1.0, 10.0],
+        "rappel_min_validation": 0.80,
+    },
 }
 
 
@@ -102,7 +112,7 @@ def entrainer(version: str = "v1", chemin_donnees=DONNEES, seed: int = SEED) -> 
         resultats.append((roc_auc_score(y_va, pipeline.predict_proba(X_va)[:, 1]), C, pipeline))
     _, C, pipeline = max(resultats, key=lambda r: r[0])
     proba_va = pipeline.predict_proba(X_va)[:, 1]
-    seuil = choisir_seuil(y_va, proba_va)
+    seuil = choisir_seuil(y_va, proba_va, config["rappel_min_validation"])
 
     return {
         "pipeline": pipeline,
@@ -112,6 +122,7 @@ def entrainer(version: str = "v1", chemin_donnees=DONNEES, seed: int = SEED) -> 
             "version": version,
             "algorithme": config["algorithme"],
             "hyperparametres": {"C": C},
+            "rappel_min_validation": config["rappel_min_validation"],
             "date_entrainement": datetime.now(timezone.utc).isoformat(timespec="seconds"),
             "graine": seed,
             "donnees": {"fichier": Path(chemin_donnees).name, "sha256": sha256(chemin_donnees), "lignes": len(donnees)},

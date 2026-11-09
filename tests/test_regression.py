@@ -143,3 +143,13 @@ def test_modele_degrade_rejete(tmp_path, paquet):
     assert resultat["decision"] == "rejeter"
     assert resultat["details"]["rappel"]["verdict"] == "rejeter"
     assert resultat["decisions_changees"] > 0
+
+
+def test_comparaison_v2_signale_la_baisse_du_f1():
+    """v2 (seuil abaissé pour le rappel) : gain de rappel, baisse du F1 au-delà de la tolérance → investiguer."""
+    resultat = comparer("models/model_v2.joblib")
+    assert resultat["decision"] == "investiguer"
+    assert resultat["details"]["f1"]["verdict"] == "investiguer"
+    assert resultat["details"]["rappel"]["baisse"] < 0  # le rappel progresse
+    assert resultat["ecart_probabilite_max"] <= 1e-12  # même pipeline : seules les décisions changent
+    assert resultat["decisions_changees"] > 0

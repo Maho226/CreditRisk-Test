@@ -1,0 +1,61 @@
+{
+  "version": "v2",
+  "algorithme": "Régression logistique (class_weight='balanced')",
+  "hyperparametres": {
+    "C": 10.0
+  },
+  "rappel_min_validation": 0.8,
+  "date_entrainement": "2026-11-09T10:44:45+00:00",
+  "graine": 42,
+  "donnees": {
+    "fichier": "credit_synthetique.csv",
+    "sha256": "e880e9e2d4e2e40fcdba8d43dda57dd705e95d9c48ae4d4327bb2a47eafe8436",
+    "lignes": 5000
+  },
+  "domaine_entrainement": {
+    "age": [
+      18.0,
+      70.0
+    ],
+    "revenu_mensuel": [
+      30000.0,
+      1589000.0
+    ],
+    "montant_credit": [
+      50000.0,
+      21760000.0
+    ],
+    "duree_mois": [
+      3.0,
+      60.0
+    ],
+    "anciennete_activite": [
+      0.0,
+      41.0
+    ]
+  },
+  "metriques_validation": {
+    "rappel": 0.8071065989847716,
+    "precision": 0.3285123966942149,
+    "f1": 0.4669603524229075,
+    "roc_auc": 0.7844061925141127,
+    "taux_signalement": 0.484,
+    "n": 1000,
+    "n_defauts": 197
+  },
+  "environnement": {
+    "python": "3.13.18",
+    "scikit-learn": "1.6.1",
+    "numpy": "2.4.6"
+  },
+  "seuil": 0.43,
+  "variables": [
+    "age",
+    "log_revenu",
+    "log_montant",
+    "duree_mois",
+    "anciennete_activite",
+    "taux_endettement"
+  ],
+  "sha256_modele": "0639025b66efbdde9864d41bdbf1bee0cbc18842ca5fc37c17a30cfad3b54165"
+}

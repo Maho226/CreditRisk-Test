@@ -1,0 +1,33 @@
+{
+  "reference": "v1",
+  "candidat": "v2",
+  "date": "2026-11-09T10:44:47+00:00",
+  "version_code": "dc4de11ed0e62be9c49b8b2e82dc92c097d81943",
+  "ecart_probabilite_max": 0.0,
+  "ecart_probabilite_moyen": 0.0,
+  "decisions_changees": 22,
+  "decision": "investiguer",
+  "details": {
+    "rappel": {
+      "reference": 0.751269035532995,
+      "candidat": 0.8071065989847716,
+      "baisse": -0.055837563451776595,
+      "tolerance": 0.03,
+      "verdict": "accepter"
+    },
+    "f1": {
+      "reference": 0.5165794066317626,
+      "candidat": 0.4669603524229075,
+      "baisse": 0.049619054208855096,
+      "tolerance": 0.03,
+      "verdict": "investiguer"
+    },
+    "roc_auc": {
+      "reference": 0.7844061925141127,
+      "candidat": 0.7844061925141127,
+      "baisse": 0.0,
+      "tolerance": 0.02,
+      "verdict": "accepter"
+    }
+  }
+}
