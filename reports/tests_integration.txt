@@ -1,0 +1,27 @@
+============================= test session starts ==============================
+platform linux -- Python 3.13.18, pytest-8.4.2, pluggy-1.7.0 -- /usr/bin/python3
+cachedir: .pytest_cache
+hypothesis profile 'default'
+rootdir: /content/CreditRisk-Test
+configfile: pyproject.toml
+plugins: locust-2.47.0, hypothesis-6.170.15, cov-7.1.0, langsmith-0.14.17, typeguard-4.6.0, anyio-4.16.0, platformdirs-4.14.3
+collecting ... collected 16 items
+
+tests/test_integration.py::test_scenario_principal_de_bout_en_bout PASSED [  6%]
+tests/test_integration.py::test_dimensions_du_modele_conformes_au_pretraitement PASSED [ 12%]
+tests/test_integration.py::test_fichier_modele_absent PASSED             [ 18%]
+tests/test_integration.py::test_fichier_modele_corrompu PASSED           [ 25%]
+tests/test_integration.py::test_fichier_modele_modifie_empreinte_differente PASSED [ 31%]
+tests/test_integration.py::test_fichier_modele_contenu_invalide PASSED   [ 37%]
+tests/test_integration.py::test_fichier_modele_variables_differentes PASSED [ 43%]
+tests/test_integration.py::test_api_avec_modele_impossible_a_charger PASSED [ 50%]
+tests/test_integration.py::test_variable_attendue_absente_au_pretraitement PASSED [ 56%]
+tests/test_integration.py::test_pretraitement_en_erreur PASSED           [ 62%]
+tests/test_integration.py::test_dimensions_incorrectes_detectees_avant_le_modele PASSED [ 68%]
+tests/test_integration.py::test_erreur_interne_du_modele PASSED          [ 75%]
+tests/test_integration.py::test_probabilite_invalide_produite_par_le_modele[nan] PASSED [ 81%]
+tests/test_integration.py::test_probabilite_invalide_produite_par_le_modele[1.5] PASSED [ 87%]
+tests/test_integration.py::test_probabilite_invalide_produite_par_le_modele[-0.1] PASSED [ 93%]
+tests/test_integration.py::test_service_retabli_apres_panne PASSED       [100%]
+
+============================== 16 passed in 0.67s ==============================
