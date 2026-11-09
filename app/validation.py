@@ -5,7 +5,7 @@ intervalles autorisés et règle de cohérence âge / ancienneté. Les messages 
 reprennent jamais les valeurs saisies.
 """
 
-from pydantic import BaseModel, ConfigDict, Field, ValidationError, model_validator
+from pydantic import BaseModel, ConfigDict, Field, ValidationError, ValidationInfo, field_validator
 
 AGE_MIN, AGE_MAX = 18, 75
 REVENU_MAX = 50_000_000
@@ -25,11 +25,13 @@ class DemandeCredit(BaseModel):
     duree_mois: int = Field(ge=DUREE_MIN, le=DUREE_MAX, description="Durée du crédit (mois)")
     anciennete_activite: int = Field(ge=0, description="Ancienneté de l'activité (années)")
 
-    @model_validator(mode="after")
-    def anciennete_coherente(self):
-        if self.anciennete_activite > self.age - AGE_DEBUT_ACTIVITE:
+    @field_validator("anciennete_activite")
+    @classmethod
+    def anciennete_coherente(cls, valeur: int, info: ValidationInfo) -> int:
+        age = info.data.get("age")  # absent si l'âge est lui-même invalide
+        if age is not None and valeur > age - AGE_DEBUT_ACTIVITE:
             raise ValueError(f"l'ancienneté de l'activité ne peut pas dépasser l'âge moins {AGE_DEBUT_ACTIVITE} ans")
-        return self
+        return valeur
 
 
 class ValidationErreur(Exception):
@@ -64,8 +66,9 @@ def formater_erreurs(erreurs: list[dict]) -> list[dict]:
     """Convertit les erreurs Pydantic/FastAPI en {champ, message}, sans les valeurs saisies."""
     details = []
     for err in erreurs:
-        loc = [str(p) for p in err.get("loc", ()) if p not in ("body",)]
-        details.append({"champ": ".".join(loc) or "requete", "message": _message(err)})
+        loc = [str(p) for p in err.get("loc", ()) if p != "body" and not isinstance(p, int)]
+        champ = "requete" if err["type"] == "json_invalid" else ".".join(loc) or "requete"
+        details.append({"champ": champ, "message": _message(err)})
     return details
 
 

@@ -1,0 +1,48 @@
+============================= test session starts ==============================
+platform linux -- Python 3.13.18, pytest-8.4.2, pluggy-1.7.0 -- /usr/bin/python3
+cachedir: .pytest_cache
+hypothesis profile 'default'
+rootdir: /content/CreditRisk-Test
+configfile: pyproject.toml
+plugins: locust-2.47.0, hypothesis-6.170.15, cov-7.1.0, langsmith-0.14.17, typeguard-4.6.0, anyio-4.16.0, platformdirs-4.14.3
+collecting ... collected 37 items
+
+tests/test_api.py::test_requete_valide PASSED                            [  2%]
+tests/test_api.py::test_requete_valide_montants_decimaux PASSED          [  5%]
+tests/test_api.py::test_requete_sans_champ_obligatoire[age] PASSED       [  8%]
+tests/test_api.py::test_requete_sans_champ_obligatoire[revenu_mensuel] PASSED [ 10%]
+tests/test_api.py::test_requete_sans_champ_obligatoire[montant_credit] PASSED [ 13%]
+tests/test_api.py::test_requete_sans_champ_obligatoire[duree_mois] PASSED [ 16%]
+tests/test_api.py::test_requete_sans_champ_obligatoire[anciennete_activite] PASSED [ 18%]
+tests/test_api.py::test_requete_champ_null PASSED                        [ 21%]
+tests/test_api.py::test_requete_objet_vide_signale_tous_les_champs PASSED [ 24%]
+tests/test_api.py::test_requete_age_negatif PASSED                       [ 27%]
+tests/test_api.py::test_requete_age_hors_intervalle[17] PASSED           [ 29%]
+tests/test_api.py::test_requete_age_hors_intervalle[76] PASSED           [ 32%]
+tests/test_api.py::test_requete_revenu_texte[250000] PASSED              [ 35%]
+tests/test_api.py::test_requete_revenu_texte[deux cent mille] PASSED     [ 37%]
+tests/test_api.py::test_requete_montant_nul_ou_negatif[0] PASSED         [ 40%]
+tests/test_api.py::test_requete_montant_nul_ou_negatif[-1000] PASSED     [ 43%]
+tests/test_api.py::test_requete_duree_non_entiere[12.5] PASSED           [ 45%]
+tests/test_api.py::test_requete_duree_non_entiere[12.0] PASSED           [ 48%]
+tests/test_api.py::test_requete_duree_non_entiere[12] PASSED             [ 51%]
+tests/test_api.py::test_requete_champ_supplementaire PASSED              [ 54%]
+tests/test_api.py::test_requete_valeurs_extremes_hors_limites_rejetees[modif0-revenu_mensuel] PASSED [ 56%]
+tests/test_api.py::test_requete_valeurs_extremes_hors_limites_rejetees[modif1-montant_credit] PASSED [ 59%]
+tests/test_api.py::test_requete_valeurs_extremes_hors_limites_rejetees[modif2-age] PASSED [ 62%]
+tests/test_api.py::test_requete_valeurs_extremes_hors_limites_rejetees[modif3-duree_mois] PASSED [ 64%]
+tests/test_api.py::test_requete_valeur_elevee_mais_autorisee_signalee PASSED [ 67%]
+tests/test_api.py::test_predict_modele_indisponible PASSED               [ 70%]
+tests/test_api.py::test_health_modele_indisponible PASSED                [ 72%]
+tests/test_api.py::test_model_info_modele_indisponible PASSED            [ 75%]
+tests/test_api.py::test_validation_avant_disponibilite_du_modele PASSED  [ 78%]
+tests/test_api.py::test_requete_mal_formee[{"age": 35,-application/json] PASSED [ 81%]
+tests/test_api.py::test_requete_mal_formee[-application/json] PASSED     [ 83%]
+tests/test_api.py::test_requete_mal_formee[age=35-application/json] PASSED [ 86%]
+tests/test_api.py::test_requete_mal_formee[[1, 2, 3]-application/json] PASSED [ 89%]
+tests/test_api.py::test_requete_mal_formee[age=35&revenu_mensuel=250000-text/plain] PASSED [ 91%]
+tests/test_api.py::test_methode_non_autorisee PASSED                     [ 94%]
+tests/test_api.py::test_health PASSED                                    [ 97%]
+tests/test_api.py::test_model_info PASSED                                [100%]
+
+============================== 37 passed in 0.70s ==============================

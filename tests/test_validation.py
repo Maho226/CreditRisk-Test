@@ -115,6 +115,7 @@ def test_entree_non_objet_rejetee(donnees):
 def test_anciennete_incoherente_avec_age_rejetee():
     with pytest.raises(ValidationErreur) as exc:
         valider_demande(avec(age=30, anciennete_activite=20))
+    assert exc.value.details[0]["champ"] == "anciennete_activite"
     assert "ancienneté" in exc.value.details[0]["message"]
 
 

@@ -2,7 +2,7 @@
 pythonpath = ["."]
 testpaths = ["tests"]
 markers = ["slow: tests de performance (exclus des Pull Requests)"]
-filterwarnings = ["ignore:Unknown solver options"]
+filterwarnings = ["ignore:Unknown solver options", "ignore:Using `httpx` with `starlette.testclient` is deprecated"]
 
 [tool.ruff]
 line-length = 120
