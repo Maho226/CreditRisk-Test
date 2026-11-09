@@ -91,18 +91,23 @@ def demarrer_serveur():
 
 
 def palier(url: str, clients: int) -> dict:
-    """`clients` clients simultanés envoient REQUETES_PAR_PALIER requêtes au total."""
+    """`clients` clients simultanés envoient REQUETES_PAR_PALIER requêtes au total.
 
-    def envoyer(i):
-        with httpx.Client() as c:
+    Un seul client HTTP partagé, avec des connexions réutilisées : créer un client par requête coûte
+    à lui seul plusieurs dizaines de millisecondes et faussait la mesure du débit (première version).
+    """
+    limites = httpx.Limits(max_connections=clients, max_keepalive_connections=clients)
+    with httpx.Client(limits=limites) as http:
+
+        def envoyer(i):
             debut = time.perf_counter()
-            code = c.post(url, json=DEMANDES[i % len(DEMANDES)]).status_code
+            code = http.post(url, json=DEMANDES[i % len(DEMANDES)]).status_code
             return time.perf_counter() - debut, code
 
-    debut = time.perf_counter()
-    with ThreadPoolExecutor(max_workers=clients) as pool:
-        resultats = list(pool.map(envoyer, range(REQUETES_PAR_PALIER)))
-    duree = time.perf_counter() - debut
+        debut = time.perf_counter()
+        with ThreadPoolExecutor(max_workers=clients) as pool:
+            resultats = list(pool.map(envoyer, range(REQUETES_PAR_PALIER)))
+        duree = time.perf_counter() - debut
     erreurs = sum(code != 200 for _, code in resultats)
     return {
         "clients": clients,
